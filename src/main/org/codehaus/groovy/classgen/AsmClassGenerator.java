@@ -172,7 +172,7 @@ public class AsmClassGenerator extends ClassGenerator {
                 String name = outerClassName + "$" + context.getNextInnerClassIdx();
                 controller.setInterfaceClassLoadingClass(
                         new InterfaceHelperClassNode (
-                                owner, name, 4128, ClassHelper.OBJECT_TYPE, 
+				owner, name, ACC_STATIC|ACC_PUBLIC|ACC_SYNTHETIC, ClassHelper.OBJECT_TYPE,
                                 controller.getCallSiteWriter().getCallSites()));
                 super.visitClass(classNode);
                 createInterfaceSyntheticStaticFields();
